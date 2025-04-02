@@ -3,9 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>We'll never know</title>
+    <title>Magician's Hat</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #222;
+        }
+        .container {
+            position: relative;
+            text-align: center;
+            cursor: pointer;
+        }
+        .hat {
+            width: 150px;
+        }
+        .card {
+            width: 100px;
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%) scale(0);
+            transition: transform 0.5s ease-in-out;
+        }
+        .show-card .card {
+            transform: translateX(-50%) scale(1);
+        }
+    </style>
 </head>
 <body>
-    <h1 style="text-align: center;"> Hello guys</h1>
+    <div class="container" onclick="revealCard()">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/73/Magician%27s_hat.svg" alt="Magician's Hat" class="hat">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/25/Playing_card_heart_A.svg" alt="Playing Card" class="card">
+    </div>
+
+    <script>
+        function revealCard() {
+            document.querySelector('.container').classList.toggle('show-card');
+        }
+    </script>
 </body>
 </html>
